@@ -68,7 +68,6 @@ char display[64] ;
 
 uint16_t speed ;
 
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -133,8 +132,6 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
-
-
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -153,12 +150,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  ssd1306_Init();          // Parametresiz, kütüphane kendi içinde hi2c1 kullanıyor
-  ssd1306_Fill(Black);     // Ekranı temizle
-  ssd1306_UpdateScreen();  // Temiz ekranı göster
-
-
-
+  ssd1306_Init();          
+  ssd1306_Fill(Black);     
+  ssd1306_UpdateScreen();  
 
   /* USER CODE END 2 */
 
@@ -166,8 +160,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-
+	  
 	  HAL_ADC_Start(&hadc1) ;
 
 	  if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)
@@ -236,10 +229,6 @@ int main(void)
 
 	  ssd1306_UpdateScreen() ;
 	  HAL_Delay(500);
-
-
-
-
 
     /* USER CODE END WHILE */
 
@@ -547,3 +536,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
