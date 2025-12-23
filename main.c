@@ -176,8 +176,8 @@ int main(void)
 	  ssd1306_Fill(Black);
 
 	  ssd1306_SetCursor(0,0);
-	  sprintf(display, "Temp: %.2f C", temperature);
-	  ssd1306_WriteString(display, Font_16x24, White);
+	  sprintf(display, "Temp:%.2fC", temperature);
+	  ssd1306_WriteString(display, Font_11x18, White);
 
 
 	  if(temperature <= c_level1){
@@ -536,4 +536,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
 
