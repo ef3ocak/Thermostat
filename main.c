@@ -218,9 +218,7 @@ int main(void)
 
 	  }
 
-	  int tempInt = (int)temperature;
-
-	  sprintf(msg, "Temp = %d C\r\n", tempInt);
+	  sprintf(msg, "Temp = %.2f C\r\n", temperature);
 	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 100);
 
 	  ssd1306_SetCursor(0,32) ;
@@ -536,5 +534,6 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
 
 
